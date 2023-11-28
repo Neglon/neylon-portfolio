@@ -1,10 +1,109 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+
+/* This is defining variables that can be used throughout the page to keep a theme*/
+:root {
+    --dark-color: darkblue;
+    --accent-color: skyblue;
+    --light-color: rgba(189, 171, 171, 0.781);
+
 }
 
-
+/* sets up the body of the web page, flex box properties defining layout for responsive design*/
 body {
-    background-color: orange;
+    background-color: var(--light-color);
+    display: flex;
+    flex-direction:column;
 }
+
+/* Header element that is a container for the h1 text and the nav bar*/
+header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background-color: var(--dark-color); 
+    color: var(--accent-color);  
+    padding: 20px;
+    align-items: center;
+    
+}
+
+h1{
+    font-size: 300%;
+}
+
+h2 {
+    font-size: 175%;
+}
+/* Nav Bar formatting, can be found inside the header container in the html*/
+nav ul {
+    display: flex;
+    justify-content: space-between;
+    min-width: 300px;
+  }
+  
+  nav a {
+    color: var(--accent-color);
+    font-weight: bold;
+    text-decoration: none;  
+  }
+
+.banner {
+    display: flex;
+    position: relative;
+    
+}
+
+.banner img{
+    width:100%;
+    max-width: 100%;
+    max-height: 10vh;
+    height: auto;
+    position: relative;
+    flex-shrink: 0;
+}
+.banner-text {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: var(--accent-color);
+    padding: 15px;
+  }
+
+.left-content {
+    flex: 1;
+    font-size: 400%;
+    color: var(--dark-color);
+}
+
+.right-content {
+    flex: 2;
+    border-left: 5px solid var(--dark-color);
+    color: var(--dark-color);
+}
+
+
+
+
+
+  /* Media Queries for flexible layout*/
+
+  @media screen and (max-width: 768px) {
+    header {
+        flex-direction: column;
+    } 
+
+    h1 {
+        padding-bottom: 15px;
+    }
+    main {
+        max-width: 1200px;
+      }
+      
+    .banner img {
+        
+    }
+}
+
+
+  
+
