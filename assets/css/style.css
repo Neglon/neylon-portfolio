@@ -2,7 +2,7 @@
 /* This is defining variables that can be used throughout the page to keep a theme*/
 :root {
     --dark-color: darkblue;
-    --accent-color: skyblue;
+    --accent-color: rgb(160, 245, 248);
     --light-color: rgba(189, 171, 171, 0.781);
 
 }
@@ -25,7 +25,7 @@ header {
     align-items: center;
     
 }
-
+/* h1 and h2 font sizing */
 h1{
     font-size: 300%;
 }
@@ -33,25 +33,33 @@ h1{
 h2 {
     font-size: 175%;
 }
+/* Footer Formatting */
+footer {
+    font-size: 100%;
+    color: var(--accent-color);
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
 /* Nav Bar formatting, can be found inside the header container in the html*/
 nav ul {
     display: flex;
     justify-content: space-between;
     min-width: 300px;
 }
-  
+/* Nav anchor element formatting */  
 nav a {
     color: var(--accent-color);
     font-weight: bold;
     text-decoration: none;  
 }
-
+/* Class id for the banner */
 .banner {
     display: flex;
     position: relative;
     
 }
-
+/* Banner image formatting */
 .banner img{
     width:100%;
     max-width: 100%;
@@ -61,6 +69,7 @@ nav a {
     flex-shrink: 0;
     margin-bottom: 25px;
 }
+/* Text box in banner image formatting */
 .banner-text {
     position: absolute;
     top: 20px;
@@ -69,13 +78,12 @@ nav a {
     color: var(--accent-color);
     padding: 15px;
   }
-
+/* class id for overall content formatting */
 .content {
     display: flex;
-    margin: 10px;
-    
-    
+    margin: 10px;   
 }  
+/*Left 1/4 of the web page with headers denoting each section of the page*/
 .left-content {
     flex: 1;
     text-align: right;
@@ -83,16 +91,14 @@ nav a {
     
     
 }
-
+/* Left content header formatting */
 .left-content h3 {
     font-size: 270%;
     color: var(--dark-color);
     display: block;
-    padding-right: 20px;
-    
-    
+    padding-right: 20px;   
 }
-
+/* Right content class formatting. this is the side of the page that should take up 3/4 on the right of the screen, above 768px see media query below */
 .right-content {
     flex: 3;
     border-left: 5px solid var(--dark-color);
@@ -102,25 +108,34 @@ nav a {
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: flex-start;
-    
 }
-
+/* Unordered List element formatting in the right content class */
 .right-content ul {
     display: flex;
     align-items: center !important;
     justify-content: space-evenly;
     flex-basis: 75%;
+    flex-wrap: wrap;
 }
-  
+.right-content li {
+    margin-bottom: 10px;
+    margin-right: 10px;
+
+}
+/* All anchor tags in the right content text formatting */  
 .right-content a {
     color: var(--dark-color);
     font-weight: bold;
-    text-decoration: none;
-    
+    text-decoration: none; 
 }
-
-
-
+/*class id being used for the margin around the about me text*/
+#bio {
+    text-indent: 20px;
+    margin-left: 25px;
+    margin-right: 25px;
+    margin-bottom: 20px;
+}
+/* Large link formatting in the work section */
 #main-link {
     border: 3px solid var(--accent-color);
     box-sizing: border-box;
@@ -131,10 +146,9 @@ nav a {
     height: 500px;
     margin-bottom: 20px;
     filter: grayscale(60%);
-    transition: filter 0.5s ease;
-    
+    transition: filter 0.5s ease;   
 }
-
+/* Smaller link formatting for work section */
 #secondary-link {
     border: 3px solid var(--accent-color);
     box-sizing: border-box;
@@ -146,9 +160,8 @@ nav a {
     margin-bottom: 20px;
     filter: grayscale(60%);
     transition: filter 0.5s ease;
-
 }
-
+/* Text box formtatting for the work links in the work section */
 #link-text {
     position: absolute;
     bottom: 30px;
@@ -159,22 +172,30 @@ nav a {
     font-size: 150%;
     border: 2px solid var(--accent-color)
 }
-
+/* ID for the background image formatting in the link boxes in the work section*/
 #background-image {
     width: 100%; 
     height: 100%; 
     object-fit: cover;
 }
-
+/*Hover psuedo classes to bring individual links to full color upon hover*/
 #main-link:hover,
 #secondary-link:hover {
     filter: grayscale(0%);
 }
+/*sizing for profile image*/
+#profile-image {
+    width:200px;
+    max-width: 100%;
+    height: auto;
+    justify-content: center !important;
+    align-items: center;
+    margin-left: 25px;
+}
 
 
-
-
-  /* Media Queries for flexible layout*/
+/* Media Queries for flexible layout*/
+/* screens 768 px or less will see the layout stacked instead of side by side for easier viewing*/
 
   @media screen and (max-width: 768px) {
     header {
@@ -188,10 +209,6 @@ nav a {
         max-width: 1200px;
       }
       
-    .banner img {
-        
-    }
-
     .content {
         flex-direction: column;
     }
@@ -211,8 +228,9 @@ nav a {
         justify-content: center;
         align-items: center;
     }
-
-
+    .right-content ul {
+        flex-direction: column;
+    }
 }
 
 
